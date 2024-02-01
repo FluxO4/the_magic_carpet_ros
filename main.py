@@ -11,11 +11,11 @@ def build():
     os.system("colcon build")
 
 if __name__ == '__main__':
-    if argv[1] == "import":
+    try:
+        if argv[1] == "import":
+            import_vcs()
+        elif argv[1] == "build":
+            build()
+    except:
         import_vcs()
-    elif argv[1] == "build":
         build()
-    else:
-        import_vcs()
-        build()
-    
